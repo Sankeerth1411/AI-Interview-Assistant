@@ -4,10 +4,13 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from service.gemini import generate_interview_question, evaluate_answer
 from fastapi.middleware.cors import CORSMiddleware
-app = FastAPI()
+app=FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "https://ai-interview-assistant-roan-five.vercel.app",
+        "https://ai-interview-assistant-j4210gr7m.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
